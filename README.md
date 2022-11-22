@@ -6,7 +6,7 @@ Veg pizza base price = 300\
 Non-veg pizza base price = 400\
 Extra Cheese Price = 80\
 Extra Toppings For Veg Pizza = 70\
-Extra Toppings For Non-veg Pizza = 120\
+Extra Toppings For Non-veg Pizza = 120
 Paper bag Price = 20
 
 You are given three classes in your driver code. Main.java, Pizza.java and DeluxePizza.java. Your DeluxePizza class should extends Pizza class and it shouldn’t have any extra methods in DeluxePizza class, i.e. make sure it’s constructor takes care of extra cheese and toppings. You have to complete the skeleton code in order to make your app work.
