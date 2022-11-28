@@ -6,25 +6,30 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
 
-    private int totalBill;
+    private int extraCheese;
+    private int extraToppings;
+    private int paperBag;
     private boolean checkExtraaCheese;
     private boolean checkExtraaToppings;
 
     private boolean checkTakeway;
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
-
+        this.extraCheese=80;
         if(isVeg){
             this.price=300;
+            this.extraToppings=70;
         }
         else{
             this.price=400;
+            this.extraToppings=120;
         }
-        this.bill="Base Price Of The Pizza: "+getPrice();
-        this.totalBill=this.price;
+        this.paperBag=20;
+        this.bill="Base Price Of The Pizza: "+this.price;
         this.checkExtraaCheese=false;
         this.checkExtraaToppings=false;
         this.checkTakeway=false;
+
     }
 
     public int getPrice(){
@@ -34,9 +39,8 @@ public class Pizza {
     public void addExtraCheese(){
         // your code goes here
         if(!checkExtraaCheese) {
-            price = 80;
-            totalBill += price;
-            this.bill += "\nExtra Cheese Added: " + getPrice();
+            this.price=this.price+this.extraCheese;
+            this.bill += "\nExtra Cheese Added: " + this.extraCheese;
             checkExtraaCheese=true;
         }
     }
@@ -44,14 +48,9 @@ public class Pizza {
     public void addExtraToppings(){
         // your code goes here
         if(!checkExtraaToppings) {
-            if (isVeg) {
-                price = 70;
-            } else {
-                price = 120;
-            }
-            totalBill += price;
-            this.bill += "\nExtra Toppings Added: " + getPrice();
-            price=totalBill;
+
+            this.price=this.price+this.extraToppings;
+            this.bill += "\nExtra Toppings Added: " + extraToppings;
             checkExtraaToppings=true;
         }
     }
@@ -59,9 +58,8 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         if(!checkTakeway) {
-            price = 20;
-            totalBill += price;
-            this.bill += "\nPaperbag Added: " + getPrice();
+            this.price=this.price+this.paperBag;
+            this.bill += "\nPaperbag Added: " +this.paperBag;
             checkTakeway=true;
         }
 
@@ -69,7 +67,7 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        this.bill+="\nTotal Price: "+totalBill+"\n";
+        this.bill += "\nTotal Price: " + this.price + "\n";
         return this.bill;
     }
 }
