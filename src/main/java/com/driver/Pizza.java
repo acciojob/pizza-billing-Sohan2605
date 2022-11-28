@@ -78,9 +78,9 @@ public class Pizza {
             if(checkTakeway){
                 this.bill=this.bill+"Paperbag Added: "+this.paperBag+"\n";
             }
-
+            this.bill += "Total Price: " + this.price + "\n";
         }
-        this.bill += "Total Price: " + this.price + "\n";
+
         return this.bill;
     }
 }
